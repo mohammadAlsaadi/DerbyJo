@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:check_out/checkOut.dart';
 import 'calender.dart';
 import 'getStrart.dart';
-
+import 'footballCategories.dart';
 import 'info.dart';
 
 void main() {
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CreatGame(),
+      home: FootbalhCategories(),
     );
   }
 }

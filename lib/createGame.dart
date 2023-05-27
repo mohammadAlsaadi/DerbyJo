@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:check_out/calender.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -36,13 +37,13 @@ class _CreatGameState extends State<CreatGame> {
   }
 
   final List<String> cardContents = [
-    'ملعب مدارس الجزيرة',
-    'ملعب القوات المسلحة',
-    'ملعب مدارس اكسفورد',
-    'ملعب لومينوس',
-    'ملعب مدارس الحكمة',
-    'ملعب مدارس الخضر',
-    'ملعب زين الشرف',
+    'Al Jazeera Schools \n Stadium',
+    'Alquaat Almusalahat \n Stadium',
+    'Oxford Schools \n Stadium',
+    'Luminous College \n Stadium,',
+    'Al-Hikma Schools \n Stadium,',
+    'Alkhudar Schools \n Stadium',
+    'Zain Al Sharaf \n Stadium',
   ];
 
   final List<String> imagesStadium = [
@@ -61,7 +62,7 @@ class _CreatGameState extends State<CreatGame> {
       child: Stack(
         children: [
           Container(
-            color: Colors.white,
+            color: Color.fromARGB(255, 240, 74, 74),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -87,12 +88,12 @@ class _CreatGameState extends State<CreatGame> {
                     "Creat a Game ",
                     style: TextStyle(
                         fontSize: 25,
-                        color: Colors.red,
+                        color: Colors.white,
                         shadows: [
                           Shadow(
-                            color: Color.fromARGB(255, 208, 208, 208),
+                            color: Color.fromARGB(255, 237, 237, 237),
                             offset: Offset(1, 1),
-                            blurRadius: 10,
+                            blurRadius: 5,
                           ),
                         ],
                         fontWeight: FontWeight.bold),
@@ -103,291 +104,275 @@ class _CreatGameState extends State<CreatGame> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 90, 0, 0),
-            child: Stack(
-              children: [
-                Container(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 0),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 20, top: 10),
-                          child: Text(
-                            "Select Stadium",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Color.fromARGB(255, 241, 61, 61),
-                                shadows: [
-                                  Shadow(
-                                    color: Color.fromARGB(255, 208, 208, 208),
-                                    offset: Offset(1, 1),
-                                    blurRadius: 10,
-                                  ),
-                                ],
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: Container(
-                    height: 200,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: cardContents.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: () => selectOption(index),
-                            child: Card(
-                              color: selectedOptionIndex == index
-                                  ? Colors.red
-                                  : Colors.white,
-                              child: Stack(
-                                children: [
-                                  Container(
-                                    width: 150,
-                                    child: Column(
-                                      children: [
-                                        Image.asset(
-                                          imagesStadium[index],
-                                          width: 150,
-                                          height: 170,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ],
+            child: Container(
+              color: Color.fromARGB(255, 216, 216, 216),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 22),
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(left: 120, bottom: 14),
+                            child: Text(
+                              textAlign: TextAlign.center,
+                              "Select stadium ",
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  color: Colors.red,
+                                  shadows: [
+                                    Shadow(
+                                      color: Color.fromARGB(255, 237, 237, 237),
+                                      offset: Offset(1, 1),
+                                      blurRadius: 5,
                                     ),
-                                  ),
-                                  Positioned(
-                                      child: Column(
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            EdgeInsets.only(top: 110, left: 4),
-                                        child: Text(
-                                          cardContents[index],
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            backgroundColor: Colors.red,
-                                            shadows: [
-                                              Shadow(
-                                                color: Color.fromARGB(
-                                                    255, 208, 208, 208),
-                                                offset: Offset(1, 1),
-                                                blurRadius: 10,
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ))
-                                ],
-                              ),
+                                  ],
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
-                        );
-                      },
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30, top: 300),
-            child: Text(
-              "___________________________________________",
-              style: TextStyle(
-                fontSize: 18,
-                color: Color.fromARGB(255, 241, 61, 61),
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  Shadow(
-                    color: Color.fromARGB(255, 208, 208, 208),
-                    offset: Offset(1, 1),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 330, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  "Pick Date",
-                  style: TextStyle(
-                    shadows: [
-                      Shadow(
-                        color: Color.fromARGB(255, 208, 208, 208),
-                        offset: Offset(1, 1),
-                        blurRadius: 10,
-                      ),
-                    ],
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),
-                ),
-                DateTimePickerDialog(),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30, top: 440),
-            child: Text(
-              "___________________________________________",
-              style: TextStyle(
-                fontSize: 18,
-                color: Color.fromARGB(255, 241, 61, 61),
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  Shadow(
-                    color: Color.fromARGB(255, 208, 208, 208),
-                    offset: Offset(1, 1),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 495, 0, 85),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 241, 61, 61),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
-                children: [
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(80, 10, 10, 10),
-                        child: Text(
-                          "Player Size ",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              Shadow(
-                                color: Color.fromARGB(255, 208, 208, 208),
-                                offset: Offset(1, 1),
-                                blurRadius: 10,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 70),
-                        child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 0),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: DropdownButton(
-                              value: sizeOfPlayeValue,
-                              onChanged: (String? value) {
-                                setState(() {
-                                  sizeOfPlayeValue = value!;
-                                });
-                              },
-                              items: sizeOfPlayeList.map((String items) {
-                                return DropdownMenuItem(
-                                  value: items,
-                                  child: Text(items),
-                                );
-                              }).toList(),
-                            )),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(60, 10, 10, 10),
-                        child: Text(
-                          "status of game ",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            shadows: [
-                              Shadow(
-                                color: Color.fromARGB(255, 208, 208, 208),
-                                offset: Offset(1, 1),
-                                blurRadius: 10,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50),
-                        child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 0),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: DropdownButton(
-                              value: statusValue,
-                              onChanged: (String? value) {
-                                setState(() {
-                                  statusValue = value!;
-                                });
-                              },
-                              items: statusList.map((String items) {
-                                return DropdownMenuItem(
-                                  value: items,
-                                  child: Text(items),
-                                );
-                              }).toList(),
-                            )),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(120, 610, 120, 25),
-            child: MaterialButton(
-              minWidth: 0,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const checkOut()),
-                );
-              },
-              color: Color.fromARGB(255, 241, 61, 61),
-              elevation: 10,
-              height: 60,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                children: const [
                   Padding(
-                    padding: EdgeInsets.only(left: 45),
-                    child: Text(
-                      "Create",
-                      style: TextStyle(
-                        fontSize: 20,
+                    padding: const EdgeInsets.only(top: 50),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
+                      ),
+                      height: 200,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: cardContents.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                              onTap: () => selectOption(index),
+                              child: Card(
+                                color: selectedOptionIndex == index
+                                    ? Colors.red
+                                    : Colors.white,
+                                child: Stack(
+                                  children: [
+                                    Text(
+                                      "Select Stadium",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color:
+                                              Color.fromARGB(255, 241, 61, 61),
+                                          shadows: [
+                                            Shadow(
+                                              color: Color.fromARGB(
+                                                  255, 208, 208, 208),
+                                              offset: Offset(1, 1),
+                                              blurRadius: 10,
+                                            ),
+                                          ],
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                            imagesStadium[index],
+                                            width: 165,
+                                            height: 170,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Positioned(
+                                        child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              top: 130, left: 4),
+                                          child: Text(
+                                            cardContents[index],
+                                            style: const TextStyle(
+                                              fontSize: 16,
+                                              color: Color.fromARGB(
+                                                  255, 255, 255, 255),
+                                              fontWeight: FontWeight.bold,
+                                              shadows: [
+                                                Shadow(
+                                                  color: Color.fromARGB(
+                                                      255, 0, 0, 0),
+                                                  offset: Offset(10, 5),
+                                                  blurRadius: 100,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 270, 10, 150),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(60, 50, 10, 10),
+                                child: Text(
+                                  "Player Size ",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    shadows: [
+                                      Shadow(
+                                        color: Colors.white,
+                                        offset: Offset(1, 1),
+                                        blurRadius: 10,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 50),
+                                child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 0),
+                                    decoration: BoxDecoration(
+                                        boxShadow: [],
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    child: DropdownButton(
+                                      underline: Container(
+                                        height: 2,
+                                        color: Color.fromARGB(255, 255, 77, 77),
+                                      ),
+                                      value: sizeOfPlayeValue,
+                                      onChanged: (String? value) {
+                                        setState(() {
+                                          sizeOfPlayeValue = value!;
+                                        });
+                                      },
+                                      items:
+                                          sizeOfPlayeList.map((String items) {
+                                        return DropdownMenuItem(
+                                          value: items,
+                                          child: Text(items),
+                                        );
+                                      }).toList(),
+                                    )),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(70, 50, 10, 10),
+                                child: Text(
+                                  "status of game ",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    shadows: [
+                                      Shadow(
+                                        color:
+                                            Color.fromARGB(255, 219, 219, 219),
+                                        offset: Offset(1, 1),
+                                        blurRadius: 10,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 50),
+                                child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 30, vertical: 0),
+                                    child: DropdownButton(
+                                      underline: Container(
+                                        height: 2,
+                                        color: Color.fromARGB(255, 255, 77, 77),
+                                      ),
+                                      value: statusValue,
+                                      onChanged: (String? value) {
+                                        setState(() {
+                                          statusValue = value!;
+                                        });
+                                      },
+                                      items: statusList.map((String items) {
+                                        return DropdownMenuItem(
+                                          value: items,
+                                          child: Text(items),
+                                        );
+                                      }).toList(),
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 470),
+                    child: Container(
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(110, 40, 110, 25),
+                        child: MaterialButton(
+                          minWidth: 0,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const booking()),
+                            );
+                          },
+                          color: Color.fromARGB(255, 241, 61, 61),
+                          elevation: 10,
+                          height: 60,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Row(
+                            children: const [
+                              Padding(
+                                padding: EdgeInsets.only(left: 50),
+                                child: Text(
+                                  "Create",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),

@@ -19,7 +19,7 @@ class _infoState extends State<info> {
           children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
+              children: const <Widget>[
                 CircleAvatar(
                   backgroundImage: AssetImage('images/gatoo.jpeg'),
                   radius: 40,
@@ -31,7 +31,7 @@ class _infoState extends State<info> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
                 width:
                     20), // Add a SizedBox between the first and second Column
             Column(

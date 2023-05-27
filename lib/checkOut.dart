@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:check_out/submitPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 // ignore: implementation_imports, unnecessary_import
@@ -217,8 +218,13 @@ class _checkOutState extends State<checkOut> {
             padding: const EdgeInsets.fromLTRB(52, 620, 50, 0),
             child: MaterialButton(
               minWidth: 0,
-              onPressed: () {},
-              color: Color.fromARGB(255, 218, 44, 93),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const submitPage()),
+                );
+              },
+              color: Color.fromARGB(255, 241, 61, 61),
               elevation: 10,
               height: 50,
               shape: RoundedRectangleBorder(

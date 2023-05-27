@@ -77,19 +77,19 @@ class _bookingState extends State<booking> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: Container(
                     height: 30,
-                    child: const Text("ملعب القوات المسلحة",
+                    child: const Text("Alquaat Almusalahat Stadium",
                         style: TextStyle(
-                            fontSize: 25,
+                            fontSize: 20,
                             decoration: TextDecoration.none,
                             color: Colors.black,
                             fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(130, 0, 0, 0),
                   child: Row(children: const [
                     Text(
                       "Amman-Jordan",
@@ -504,31 +504,14 @@ class _bookingState extends State<booking> {
                                 ),
                                 child: Row(
                                   children: const [
-                                    Text(
-                                      "1 item",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.white,
-                                      ),
-                                    ),
                                     Padding(
-                                      padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+                                      padding: EdgeInsets.fromLTRB(70, 0, 0, 0),
                                       child: Text(
-                                        "checkout",
+                                        "Book a game",
                                         style: TextStyle(
                                             fontSize: 18,
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
-                                      child: Text(
-                                        "37.00JD",
-                                        style: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.white,
-                                        ),
                                       ),
                                     ),
                                   ],
