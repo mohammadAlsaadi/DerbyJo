@@ -285,6 +285,36 @@ class _signUpPage2widgetState extends State<signUpPage2widget> {
 
   var genderList = ["male", "female"];
   String genderValue = "male";
+  var CityList = [
+    "Amman",
+    "Irbid",
+    "Ajloun",
+    "Jerash",
+    "Mafraq",
+    "	Salt",
+    "Zarqa",
+    "Madaba",
+    "Al Karak",
+    "Tafilah",
+    "	Ma'an",
+    "Aqaba"
+  ];
+  String CityValue = "Amman";
+  var regionList = [
+    "Alhashmi Alshamali",
+    "Tabarbor",
+    "shafa Badran",
+    "Abdoon",
+    "Jabal Alhuseen",
+    "Marka",
+    "Khalda",
+    "Alshmisani",
+    "Aldahieh",
+    "Marj Alhamam"
+  ];
+
+  String ragionValue = "Alhasmi";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -427,41 +457,11 @@ class _signUpPage2widgetState extends State<signUpPage2widget> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                     child: Column(
                       children: [
                         Text(
                           "City ",
-                          style: TextStyle(
-                              fontSize: 18,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 232, 232, 232),
-                              borderRadius: BorderRadius.circular(10)),
-                          child: DropdownButton(
-                            value: selectedValue,
-                            items: Age(),
-                            onChanged: (value) {
-                              setState(() {
-                                selectedValue = value;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(150, 0, 0, 0),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Gender ",
                           style: TextStyle(
                               fontSize: 18,
                               color: Colors.black,
@@ -474,13 +474,47 @@ class _signUpPage2widgetState extends State<signUpPage2widget> {
                                 color: Color.fromARGB(255, 232, 232, 232),
                                 borderRadius: BorderRadius.circular(10)),
                             child: DropdownButton(
-                              value: genderValue,
+                              value: CityValue,
                               onChanged: (String? value) {
                                 setState(() {
-                                  genderValue = value!;
+                                  CityValue = value!;
                                 });
                               },
-                              items: genderList.map((String items) {
+                              items: CityList.map((String items) {
+                                return DropdownMenuItem(
+                                  value: items,
+                                  child: Text(items),
+                                );
+                              }).toList(),
+                            )),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(130, 0, 0, 0),
+                    child: Column(
+                      children: [
+                        Text(
+                          "region ",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 0),
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 232, 232, 232),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: DropdownButton(
+                              value: CityValue,
+                              onChanged: (String? value) {
+                                setState(() {
+                                  CityValue = value!;
+                                });
+                              },
+                              items: CityList.map((String items) {
                                 return DropdownMenuItem(
                                   value: items,
                                   child: Text(items),

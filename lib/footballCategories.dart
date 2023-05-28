@@ -4,14 +4,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
-class FootbalhCategories extends StatefulWidget {
-  const FootbalhCategories({super.key});
+class FootballCategories extends StatefulWidget {
+  const FootballCategories({super.key});
 
   @override
-  State<FootbalhCategories> createState() => _FootbalhCategoriesState();
+  State<FootballCategories> createState() => _FootballCategoriesState();
 }
 
-class _FootbalhCategoriesState extends State<FootbalhCategories> {
+class _FootballCategoriesState extends State<FootballCategories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

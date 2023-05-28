@@ -1,3 +1,4 @@
+import 'package:check_out/footballCategories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -142,7 +143,14 @@ class _categoriesState extends State<categories> {
                                               30, 0, 30, 0),
                                           child: MaterialButton(
                                             minWidth: 0,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const FootballCategories()),
+                                              );
+                                            },
                                             color: Color.fromARGB(
                                                 255, 218, 44, 93),
                                             elevation: 10,
